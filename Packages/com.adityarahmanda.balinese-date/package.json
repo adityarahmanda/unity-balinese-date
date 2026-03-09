@@ -1,0 +1,24 @@
+{
+  "name": "com.adityarahmanda.balinese-date",
+  "version": "1.0.0",
+  "displayName": "Balinese Date",
+  "documentationUrl": "https://github.com/adityarahmanda/unity-balinese-date/blob/master/README.md",
+  "changelogUrl": "https://github.com/adityarahmanda/unity-balinese-date/commits/master",
+  "licensesUrl": "https://github.com/adityarahmanda/unity-balinese-date/blob/master/LICENSE",
+  "keywords": [
+    "saka",
+    "balinese",
+    "date",
+    "calendar",
+    "system",
+    "tool",
+    "utility"
+  ],
+  "author": {
+    "name": "Aditya Rahmanda",
+    "email": "arahmanda21@gmail.com",
+    "url": "https://adityarahmanda.github.io"
+  },
+  "dependencies": {},
+  "description": "BalineseDate is a open source library to develop Balinese Saka Calendar (Kalender Bali) in C# and Unity. This library is ported from Peradnya's Balinese Date javascript library (https://github.com/peradnya/balinese-date-js-lib)."
+}
