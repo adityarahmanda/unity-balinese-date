@@ -34,7 +34,6 @@ namespace BalineseCalendar
         public SasihDayInfo sasihDayInfo { get; private set; }
         public int[] sasihDay { get; private set; }
         public PratithiSamutPada pratithiSamutPada { get; private set; }
-        public IReadOnlyList<Dewasa> dewasa { get; private set; }
 
         private const int DAY_PAWUKON = 210;
         private const int DAY_NGUNARATRI = 63;
@@ -112,7 +111,6 @@ namespace BalineseCalendar
             }
 
             pratithiSamutPada = CalculatePratithiSamutPada(sasihDay, sasihDayInfo, sasih, dateRef);
-            dewasa = GetDewasaBySaptaWaraWuku(saptaWara, wuku);
         }
 
         private Pivot GetBestPivot(DateTime date) => date < PANGALANTAKA_PAING ? Pivot.PIVOT_1971 : Pivot.PIVOT_2000;

@@ -6,11 +6,7 @@ namespace BalineseCalendar.Sample
 {
     public class BalineseDateSample : MonoBehaviour
     {
-        public enum InputType
-        {
-            Today,
-            Custom
-        }
+        public enum InputType { Today, Custom }
         
         [SerializeField] private TextMeshProUGUI dateInformationText;
         [SerializeField] private InputType inputType;
@@ -21,7 +17,6 @@ namespace BalineseCalendar.Sample
         private void Awake()
         {
             var balineseDateToday = inputType == InputType.Today ? BalineseDate.Today : new BalineseDate(year, month, day);
-            var balineseDateRahinan = balineseDateToday.GetRahinan();
             var dateInformation =
                 $"<b>Kalender Bali {balineseDateToday.date.ToString("dddd, dd MMMM yyyy", new CultureInfo("id-ID"))}</b>\n\n" +
                 $"<b>Penanggal:</b> {string.Join("/", balineseDateToday.sasihDay)}\n" +
@@ -58,10 +53,10 @@ namespace BalineseCalendar.Sample
                 $"<b>Watek Madya:</b> {balineseDateToday.watekMadya}\n" +
                 $"<b>Watek Alit:</b> {balineseDateToday.watekAlit}\n" +
                 $"<b>Rakam:</b> {balineseDateToday.rakam}\n" +
-                
-                "\n<b>Rahinan dan Dewasa</b>\n" +
-                $"<b>Rahinan:</b> {string.Join(", ", balineseDateRahinan)}\n" +
-                $"<b>Dewasa:</b> {string.Join(", ", balineseDateToday.dewasa)}\n";
+
+                "\n<b>Dewasa dan Rahinan</b>\n" +
+                $"<b>Dewasa:</b> {string.Join(", ", balineseDateToday.GetDewasa())}\n" +
+                $"<b>Rahinan:</b> {string.Join(", ", balineseDateToday.GetRahinan())}\n";
             dateInformationText.text = dateInformation;
         }
     }

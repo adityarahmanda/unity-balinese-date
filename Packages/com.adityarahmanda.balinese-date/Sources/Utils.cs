@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BalineseCalendar
 {
-    public static class Utils
+    public static partial class Utils
     {
         public static BalineseDate ToBalineseDate(this DateTime dateTime) => new(dateTime);
 

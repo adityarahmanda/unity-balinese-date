@@ -2,9 +2,14 @@ using System.Collections.Generic;
 
 namespace BalineseCalendar
 {
-    public partial struct BalineseDate
+    public static partial class Utils
     {
-        private List<Dewasa> GetDewasaBySaptaWaraWuku(SaptaWara saptaWara, Wuku wuku)
+        public static List<Dewasa> GetDewasa(this BalineseDate balineseDate)
+        {
+            return CalculateDewasaBySaptawaraAndWuku(balineseDate.saptaWara, balineseDate.wuku);
+        }
+
+        private static List<Dewasa> CalculateDewasaBySaptawaraAndWuku(SaptaWara saptaWara, Wuku wuku)
         {
             var list = new List<Dewasa>();
             if (wuku == Wuku.SINTA)
