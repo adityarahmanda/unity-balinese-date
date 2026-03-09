@@ -425,5 +425,11 @@ namespace BalineseCalendar
         private int GetMod(int a, int b) => ((a % b) + b) % b;
 
         private int GetDeltaDays(DateTime from, DateTime to) => (to - from.Date).Days;
+        
+        public bool Equals(BalineseDate other) => date == other.date;
+        public static bool operator ==(BalineseDate left, BalineseDate right) => left.date == right.date;
+        public static bool operator !=(BalineseDate left, BalineseDate right) => left.date != right.date;
+        public override bool Equals(object obj) => obj is BalineseDate other && Equals(other);
+        public override int GetHashCode() => date.GetHashCode();
     }
 }

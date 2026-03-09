@@ -1,6 +1,6 @@
 namespace BalineseCalendar
 {
-    public struct Wuku
+    public sealed class Wuku
     {
         public int Id { get; }
         public int Urip { get; }
@@ -53,10 +53,13 @@ namespace BalineseCalendar
         };
 
         public override string ToString() => Name;
-
-        public static bool operator ==(Wuku left, Wuku right) => left.Id == right.Id;
-        public static bool operator !=(Wuku left, Wuku right) => left.Id != right.Id;
-
+        public static bool operator ==(Wuku left, Wuku right)
+        {
+            if (ReferenceEquals(left, right)) return true;
+            if (ReferenceEquals(left, null) || ReferenceEquals(right, null)) return false;
+            return left.Id == right.Id;
+        }
+        public static bool operator !=(Wuku left, Wuku right) => !(left == right);
         public override bool Equals(object obj) => obj is Wuku other && this == other;
         public override int GetHashCode() => Id;
     }

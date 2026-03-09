@@ -21,6 +21,7 @@ namespace BalineseCalendar.Sample
         private void Awake()
         {
             var balineseDateNow = inputType == InputType.Today ? BalineseDate.Today : new BalineseDate(year, month, day);
+            var balineseDateRahinan = balineseDateNow.GetRahinan();
             var dateInformation =
                 $"<b>Kalender Bali {balineseDateNow.date.ToString("dddd, dd MMMM yyyy", new CultureInfo("id-ID"))}</b>\n\n" +
                 $"<b>Penanggal:</b> {string.Join("/", balineseDateNow.sasihDay)}\n" +
@@ -56,7 +57,10 @@ namespace BalineseCalendar.Sample
                 $"<b>Pratithi Samut Pada:</b> {balineseDateNow.pratithiSamutPada}\n" +
                 $"<b>Watek Madya:</b> {balineseDateNow.watekMadya}\n" +
                 $"<b>Watek Alit:</b> {balineseDateNow.watekAlit}\n" +
-                $"<b>Rakam:</b> {balineseDateNow.rakam}\n";
+                $"<b>Rakam:</b> {balineseDateNow.rakam}\n" +
+                
+                "\n<b>Rahinan</b>\n" +
+                $"<b>Rahinan:</b> {string.Join(",", balineseDateRahinan)}\n";
             dateInformationText.text = dateInformation;
         }
     }

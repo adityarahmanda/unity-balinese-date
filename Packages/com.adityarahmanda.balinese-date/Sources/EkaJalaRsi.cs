@@ -1,6 +1,6 @@
 namespace BalineseCalendar
 {
-    public struct EkaJalaRsi
+    public sealed class EkaJalaRsi
     {
         public int Id { get; }
         public string Name { get; }
@@ -73,10 +73,13 @@ namespace BalineseCalendar
         };
 
         public override string ToString() => Name;
-
-        public static bool operator ==(EkaJalaRsi left, EkaJalaRsi right) => left.Id == right.Id;
-        public static bool operator !=(EkaJalaRsi left, EkaJalaRsi right) => left.Id != right.Id;
-
+        public static bool operator ==(EkaJalaRsi left, EkaJalaRsi right)
+        {
+            if (ReferenceEquals(left, right)) return true;
+            if (ReferenceEquals(left, null) || ReferenceEquals(right, null)) return false;
+            return left.Id == right.Id;
+        }
+        public static bool operator !=(EkaJalaRsi left, EkaJalaRsi right) => !(left == right);
         public override bool Equals(object obj) => obj is EkaJalaRsi other && this == other;
         public override int GetHashCode() => Id;
     }

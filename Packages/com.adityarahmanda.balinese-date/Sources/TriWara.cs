@@ -1,6 +1,6 @@
 namespace BalineseCalendar
 {
-    public struct TriWara
+    public sealed class TriWara
     {
         public int Id { get; }
         public int Urip { get; }
@@ -25,10 +25,13 @@ namespace BalineseCalendar
         };
 
         public override string ToString() => Name;
-
-        public static bool operator ==(TriWara left, TriWara right) => left.Id == right.Id;
-        public static bool operator !=(TriWara left, TriWara right) => left.Id != right.Id;
-
+        public static bool operator ==(TriWara left, TriWara right)
+        {
+            if (ReferenceEquals(left, right)) return true;
+            if (ReferenceEquals(left, null) || ReferenceEquals(right, null)) return false;
+            return left.Id == right.Id;
+        }
+        public static bool operator !=(TriWara left, TriWara right) => !(left == right);
         public override bool Equals(object obj) => obj is TriWara other && this == other;
         public override int GetHashCode() => Id;
     }

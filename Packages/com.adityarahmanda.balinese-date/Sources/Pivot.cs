@@ -2,7 +2,7 @@ using System;
 
 namespace BalineseCalendar
 {
-    public struct Pivot
+    public sealed class Pivot
     {
         public DateTime Date { get; }
         public int PawukonDay { get; }
