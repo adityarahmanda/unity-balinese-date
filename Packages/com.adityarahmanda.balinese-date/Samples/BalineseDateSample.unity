@@ -547,10 +547,10 @@ MonoBehaviour:
     <b>Ingkel Jejepan:</b> -
 
 
-    <b>Lainnya</b>
+    <b>Wariga Lainnya</b>
 
-    <b>Eka Jala Rsi:</b>
-    -
+    <b>Eka Jala
+    Rsi:</b> -
 
     <b>Pratithi Samut Pada:</b> -
 
@@ -562,9 +562,12 @@ MonoBehaviour:
     <b>Rakam:</b> -
 
 
-    <b>Rahinan</b>
+    <b>Rahinan dan Dewasa</b>
 
-    <b>Rahinan:</b> -
+    <b>Rahinan:</b>
+    -
+
+    <b>Dewasa:</b> -
 
 '
   m_isRightToLeft: 0

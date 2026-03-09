@@ -20,47 +20,48 @@ namespace BalineseCalendar.Sample
 
         private void Awake()
         {
-            var balineseDateNow = inputType == InputType.Today ? BalineseDate.Today : new BalineseDate(year, month, day);
-            var balineseDateRahinan = balineseDateNow.GetRahinan();
+            var balineseDateToday = inputType == InputType.Today ? BalineseDate.Today : new BalineseDate(year, month, day);
+            var balineseDateRahinan = balineseDateToday.GetRahinan();
             var dateInformation =
-                $"<b>Kalender Bali {balineseDateNow.date.ToString("dddd, dd MMMM yyyy", new CultureInfo("id-ID"))}</b>\n\n" +
-                $"<b>Penanggal:</b> {string.Join("/", balineseDateNow.sasihDay)}\n" +
-                $"<b>Sasih:</b> {balineseDateNow.sasih}\n" +
-                $"<b>Saka:</b> {balineseDateNow.saka}\n" +
+                $"<b>Kalender Bali {balineseDateToday.date.ToString("dddd, dd MMMM yyyy", new CultureInfo("id-ID"))}</b>\n\n" +
+                $"<b>Penanggal:</b> {string.Join("/", balineseDateToday.sasihDay)}\n" +
+                $"<b>Sasih:</b> {balineseDateToday.sasih}\n" +
+                $"<b>Saka:</b> {balineseDateToday.saka}\n" +
 
                 "\n<b>Pawukon</b>\n" +
-                $"<b>Wuku:</b> {balineseDateNow.wuku}\n" +
+                $"<b>Wuku:</b> {balineseDateToday.wuku}\n" +
 
                 "\n<b>Waweran</b>\n" +
-                $"<b>EkaWara:</b> {balineseDateNow.ekaWara}\n" +
-                $"<b>DwiWara:</b> {balineseDateNow.dwiWara}\n" +
-                $"<b>TriWara:</b> {balineseDateNow.triWara}\n" +
-                $"<b>CaturWara:</b> {balineseDateNow.caturWara}\n" +
-                $"<b>PancaWara:</b> {balineseDateNow.pancaWara}\n" +
-                $"<b>SadWara:</b> {balineseDateNow.sadWara}\n" +
-                $"<b>SaptaWara:</b> {balineseDateNow.saptaWara}\n" +
-                $"<b>AstaWara:</b> {balineseDateNow.astaWara}\n" +
-                $"<b>SangaWara:</b> {balineseDateNow.sangaWara}\n" +
-                $"<b>DasaWara:</b> {balineseDateNow.dasaWara}\n" +
+                $"<b>EkaWara:</b> {balineseDateToday.ekaWara}\n" +
+                $"<b>DwiWara:</b> {balineseDateToday.dwiWara}\n" +
+                $"<b>TriWara:</b> {balineseDateToday.triWara}\n" +
+                $"<b>CaturWara:</b> {balineseDateToday.caturWara}\n" +
+                $"<b>PancaWara:</b> {balineseDateToday.pancaWara}\n" +
+                $"<b>SadWara:</b> {balineseDateToday.sadWara}\n" +
+                $"<b>SaptaWara:</b> {balineseDateToday.saptaWara}\n" +
+                $"<b>AstaWara:</b> {balineseDateToday.astaWara}\n" +
+                $"<b>SangaWara:</b> {balineseDateToday.sangaWara}\n" +
+                $"<b>DasaWara:</b> {balineseDateToday.dasaWara}\n" +
 
                 "\n<b>Palelintangan</b>\n" +
-                $"<b>Lintang:</b> {balineseDateNow.lintang}\n" +
-                $"<b>Pancasuda:</b> {balineseDateNow.pancaSuda}\n" +
-                $"<b>Pararasan:</b> {balineseDateNow.pararasan}\n" +
+                $"<b>Lintang:</b> {balineseDateToday.lintang}\n" +
+                $"<b>Pancasuda:</b> {balineseDateToday.pancaSuda}\n" +
+                $"<b>Pararasan:</b> {balineseDateToday.pararasan}\n" +
 
                 "\n<b>Paringkelan</b>\n" +
-                $"<b>Ingkel Pandakan:</b> {balineseDateNow.ingkel}\n" +
-                $"<b>Ingkel Jejepan:</b> {balineseDateNow.jejepan}\n" +
+                $"<b>Ingkel Pandakan:</b> {balineseDateToday.ingkel}\n" +
+                $"<b>Ingkel Jejepan:</b> {balineseDateToday.jejepan}\n" +
 
-                "\n<b>Lainnya</b>\n" +
-                $"<b>Eka Jala Rsi:</b> {balineseDateNow.ekaJalaRsi}\n" +
-                $"<b>Pratithi Samut Pada:</b> {balineseDateNow.pratithiSamutPada}\n" +
-                $"<b>Watek Madya:</b> {balineseDateNow.watekMadya}\n" +
-                $"<b>Watek Alit:</b> {balineseDateNow.watekAlit}\n" +
-                $"<b>Rakam:</b> {balineseDateNow.rakam}\n" +
+                "\n<b>Wariga Lainnya</b>\n" +
+                $"<b>Eka Jala Rsi:</b> {balineseDateToday.ekaJalaRsi}\n" +
+                $"<b>Pratithi Samut Pada:</b> {balineseDateToday.pratithiSamutPada}\n" +
+                $"<b>Watek Madya:</b> {balineseDateToday.watekMadya}\n" +
+                $"<b>Watek Alit:</b> {balineseDateToday.watekAlit}\n" +
+                $"<b>Rakam:</b> {balineseDateToday.rakam}\n" +
                 
-                "\n<b>Rahinan</b>\n" +
-                $"<b>Rahinan:</b> {string.Join(",", balineseDateRahinan)}\n";
+                "\n<b>Rahinan dan Dewasa</b>\n" +
+                $"<b>Rahinan:</b> {string.Join(", ", balineseDateRahinan)}\n" +
+                $"<b>Dewasa:</b> {string.Join(", ", balineseDateToday.dewasa)}\n";
             dateInformationText.text = dateInformation;
         }
     }
