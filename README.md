@@ -3,13 +3,13 @@
 
 ## Introduction
 
-BalineseDate is a open source library to develop Balinese Saka Calendar (Kalender Bali) in C# and Unity. This library is ported from Peradnya's Balinese Date javascript library (https://github.com/peradnya/balinese-date-js-lib).
+BalineseDate is an open source library to develop Balinese Saka Calendar (Kalender Bali) in C# or Unity. This library is ported from [Peradnya's Balinese Date Java Library](https://github.com/peradnya/balinese-date-java-lib).
 
-> **Note**: This library is in **Beta Phase**, the API may change without notice.
+[![openupm](https://img.shields.io/npm/v/com.adityarahmanda.balinese-date?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.adityarahmanda.balinese-date/)
 
 ## Features
 
-BalineseDate is designed to be __immutable__. BalineseDate have several features like:
+BalineseDate is designed to be __immutable__ and have several features like:
 
 * [Pawukon](http://www.babadbali.com/pewarigaan/kalender-pawukon.htm)
 * [Pawewaran](http://www.babadbali.com/pewarigaan/pawewaran.htm)
@@ -31,21 +31,22 @@ BalineseDate is designed to be __immutable__. BalineseDate have several features
   * [PancaSuda](http://www.babadbali.com/pewarigaan/pancasuda.htm)
   * [Pararasan](http://www.babadbali.com/pewarigaan/paarasan.htm)
   * [Rakam](http://www.babadbali.com/pewarigaan/rakam.htm)
-* Eka Jala Rsi __(v0.3.0)__
-* Pratithi Samut Pada __(v0.3.0)__
-* Dewasa __(v0.5.0)__
+* Eka Jala Rsi
+* Pratithi Samut Pada
+* Dewasa
 * Sasih
   * Pawukon/Penanggal and Nguna Ratri.
   * Pengalantaka Eka Sungsang Pon (before 2000) & Paing (2000 and after)
   * Malamasa (< 1993), Sasih Kesinambungan (1993 - 2002), Nampih Sasih (>= 2003)
 * [Saka Year](http://www.babadbali.com/pewarigaan/kalender-saka.htm)
-* Rahinan __(v0.4.2)__
+* Rahinan
 
-BalineseDate also have several utilities that can be use by developer like:
+BalineseDate also have several utilities that can be used by developers like:
 
-* Filter BalineseDate(s) from selected Date __(v0.2.0)__
-* Filter BalineseDate(s) from selected BalineseDate List __(v0.4.0)__
-* List of Rahinan given the BalineseDate __(v0.4.2)__
+* Filter BalineseDate(s) from selected Date
+* Filter BalineseDate(s) from selected BalineseDate List
+* List of Rahinan given the BalineseDate
+* List of Dewasa given the BalineseDate
 
 ## Installation
 
@@ -63,7 +64,7 @@ git clone https://github.com/adityarahmanda/unity-balinese-date.git
 
 1. Go to [Releases](https://github.com/adityarahmanda/unity-balinese-date/releases) page
 
-2. Download latest `.unitypackage` from the latest release
+2. Download `.unitypackage` from the latest release
 
 3. Import the downloaded `.unitypackage` to your Unity project
 
@@ -164,4 +165,49 @@ namespace BalineseCalendar.Sample
         }
     }
 }
+```
+
+Example output of the dateInformation would be
+
+```
+<b>Kalender Bali Selasa, 07 April 2026</b>
+
+<b>Penanggal:</b> 5/6
+<b>Sasih:</b> Kadasa
+<b>Saka:</b> 1948
+
+<b>Pawukon</b>
+<b>Wuku:</b> Sinta
+
+<b>Waweran</b>
+<b>EkaWara:</b> Luang
+<b>DwiWara:</b> Pepet
+<b>TriWara:</b> Kajeng
+<b>CaturWara:</b> Jaya
+<b>PancaWara:</b> Wage
+<b>SadWara:</b> Urukung
+<b>SaptaWara:</b> Anggara
+<b>AstaWara:</b> Guru
+<b>SangaWara:</b> Dangu
+<b>DasaWara:</b> Raja
+
+<b>Palelintangan</b>
+<b>Lintang:</b> Jung Sarat
+<b>Pancasuda:</b> Lebu Katiup Angin
+<b>Pararasan:</b> Laku Bumi
+
+<b>Paringkelan</b>
+<b>Ingkel Pandakan:</b> Wong
+<b>Ingkel Jejepan:</b> Sato
+
+<b>Wariga Lainnya</b>
+<b>Eka Jala Rsi:</b> Manggih Suka
+<b>Pratithi Samut Pada:</b> Jaramarana
+<b>Watek Madya:</b> Watu
+<b>Watek Alit:</b> Lembu
+<b>Rakam:</b> Mantri Sinaroja
+
+<b>Dewasa dan Rahinan</b>
+<b>Dewasa:</b> Basah Gede, Carik Walangati, Salah Wadi, Banu Urung, Kala Empas, Kala Luang, Kala Sor, Titi Buwuk
+<b>Rahinan:</b> Sabuh Emas
 ```
