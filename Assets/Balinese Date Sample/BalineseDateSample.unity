@@ -330,9 +330,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621527599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c49f78a62fdbdc94791d34a5fba795cf, type: 3}
+  m_Script: {fileID: 11500000, guid: dfcf2b7351b915046a0c9d3df9c26774, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::BalineseDateSample
   dateInformationText: {fileID: 1965337150}
   inputType: 1
   day: 7
