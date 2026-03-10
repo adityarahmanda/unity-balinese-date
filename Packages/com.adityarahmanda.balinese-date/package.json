@@ -20,7 +20,7 @@
     "url": "https://adityarahmanda.github.io"
   },
   "dependencies": {},
-  "description": "BalineseDate is a open source library to develop Balinese Saka Calendar (Kalender Bali) in C# and Unity. This library is ported from Peradnya's Balinese Date javascript library (https://github.com/peradnya/balinese-date-js-lib).",
+  "description": "BalineseDate is a open source library to develop Balinese Saka Calendar (Kalender Bali) in C# and Unity. This library is ported from Peradnya's Balinese Date Java Library (https://github.com/peradnya/balinese-date-java-lib).",
   "samples": [
     {
       "displayName": "Balinese Date Sample",
