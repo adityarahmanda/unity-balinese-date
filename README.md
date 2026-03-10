@@ -47,6 +47,55 @@ BalineseDate also have several utilities that can be use by developer like:
 * Filter BalineseDate(s) from selected BalineseDate List __(v0.4.0)__
 * List of Rahinan given the BalineseDate __(v0.4.2)__
 
+## Installation
+
+### Install via Clone
+
+1. Clone this project
+
+```
+git clone https://github.com/adityarahmanda/unity-balinese-date.git
+```
+
+2. Open the Project in Unity
+
+### Install via .unitypackage Releases
+
+1. Go to [Releases](https://github.com/adityarahmanda/unity-balinese-date/releases) page
+
+2. Download latest `.unitypackage` from the latest release
+
+3. Import the downloaded `.unitypackage` to your Unity project
+
+### Install via Unity Package Manager
+
+1. In Unity, Open `Edit -> Project Settings -> Package Manager`
+
+2. Add a new Scoped Registry (or edit the existing OpenUPM entry)
+
+    |Label|Value|
+    |----|----|
+    |Name|Aditya Rahmanda|
+    |URL|https://package.openupm.com|
+    |Scope(s)|com.adityarahmanda|
+
+3. Click `Save` or `Apply`
+
+4. Open Window/Package Manager
+
+5. There are several ways to add the package
+
+    - Go to My Registries section, 
+    - Find `Aditya Rahmanda`'s `Balinese Date` package 
+    - Click `Install` Button
+  
+    or
+
+    - Click `+`
+    - Select `Add package by name...`
+    - Paste `com.adityarahmanda.balinese-date` into name
+    - Click Add
+
 ## Using in Code
 
 Below code is an example of how to use of BalineseDate:
@@ -60,11 +109,7 @@ namespace BalineseCalendar.Sample
 {
     public class BalineseDateSample : MonoBehaviour
     {
-        public enum InputType
-        {
-            Today,
-            Custom
-        }
+        public enum InputType { Today, Custom }
         
         [SerializeField] private TextMeshProUGUI dateInformationText;
         [SerializeField] private InputType inputType;
@@ -75,7 +120,6 @@ namespace BalineseCalendar.Sample
         private void Awake()
         {
             var balineseDateToday = inputType == InputType.Today ? BalineseDate.Today : new BalineseDate(year, month, day);
-            var balineseDateRahinan = balineseDateToday.GetRahinan();
             var dateInformation =
                 $"<b>Kalender Bali {balineseDateToday.date.ToString("dddd, dd MMMM yyyy", new CultureInfo("id-ID"))}</b>\n\n" +
                 $"<b>Penanggal:</b> {string.Join("/", balineseDateToday.sasihDay)}\n" +
@@ -106,15 +150,16 @@ namespace BalineseCalendar.Sample
                 $"<b>Ingkel Pandakan:</b> {balineseDateToday.ingkel}\n" +
                 $"<b>Ingkel Jejepan:</b> {balineseDateToday.jejepan}\n" +
 
-                "\n<b>Lainnya</b>\n" +
+                "\n<b>Wariga Lainnya</b>\n" +
                 $"<b>Eka Jala Rsi:</b> {balineseDateToday.ekaJalaRsi}\n" +
                 $"<b>Pratithi Samut Pada:</b> {balineseDateToday.pratithiSamutPada}\n" +
                 $"<b>Watek Madya:</b> {balineseDateToday.watekMadya}\n" +
                 $"<b>Watek Alit:</b> {balineseDateToday.watekAlit}\n" +
                 $"<b>Rakam:</b> {balineseDateToday.rakam}\n" +
-                
-                "\n<b>Rahinan</b>\n" +
-                $"<b>Rahinan:</b> {string.Join(",", balineseDateRahinan)}\n";
+
+                "\n<b>Dewasa dan Rahinan</b>\n" +
+                $"<b>Dewasa:</b> {string.Join(", ", balineseDateToday.GetDewasa())}\n" +
+                $"<b>Rahinan:</b> {string.Join(", ", balineseDateToday.GetRahinan())}\n";
             dateInformationText.text = dateInformation;
         }
     }
