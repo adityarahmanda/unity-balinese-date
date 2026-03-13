@@ -52,13 +52,27 @@ BalineseDate also have several utilities that can be used by developers like:
 
 ### Install via Clone
 
-1. Clone this project
+Clone this project using this command line
 
 ```
 git clone https://github.com/adityarahmanda/unity-balinese-date.git
 ```
 
-2. Open the Project in Unity
+### Install via Git Url
+
+1. Open Unity Package Manager
+
+2. Click `+`
+
+3. Select `Add package from git URL...`
+
+4. Paste this URL
+
+```
+https://github.com/adityarahmanda/unity-balinese-date.git?path=/Packages/com.adityarahmanda.balinese-date
+```
+
+5. Click Add
 
 ### Install via .unitypackage Releases
 
@@ -68,7 +82,7 @@ git clone https://github.com/adityarahmanda/unity-balinese-date.git
 
 3. Import the downloaded `.unitypackage` to your Unity project
 
-### Install via Unity Package Manager
+### Install via Scoped Registry
 
 1. In Unity, Open `Edit -> Project Settings -> Package Manager`
 
