@@ -4,7 +4,9 @@
       "version": "file:com.adityarahmanda.balinese-date",
       "depth": 0,
       "source": "embedded",
-      "dependencies": {}
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.2.2"
+      }
     },
     "com.unity.editorcoroutines": {
       "version": "1.0.1",

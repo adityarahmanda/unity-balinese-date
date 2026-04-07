@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28ba18fa3a2948729eff4727072959f9, type: 3}
+  m_Name: SasihDatabase
+  m_EditorClassIdentifier: BalineseCalendar::BalineseCalendar.SasihDatabase
+  sasihDataList:
+  - SasihId: 0
+    SuitableActivityList:
+    - Pitra Yadnya
+    - Rsi Yadnya
+    UnsuitableActivityList:
+    - Manusa Yadnya
+  - SasihId: 1
+    SuitableActivityList:
+    - Pitra Yadnya
+    UnsuitableActivityList:
+    - Manusa Yadnya
+  - SasihId: 2
+    SuitableActivityList:
+    - Pitra Yadnya
+    UnsuitableActivityList:
+    - Manusa Yadnya
+  - SasihId: 3
+    SuitableActivityList:
+    - Dewa Yadnya
+    - Manusa Yadnya
+    - Rsi Yadnya
+    UnsuitableActivityList:
+    - Pitra Yadnya
+  - SasihId: 4
+    SuitableActivityList:
+    - Dewa Yadnya
+    - Manusa Yadnya
+    UnsuitableActivityList:
+    - Pitra Yadnya
+  - SasihId: 5
+    SuitableActivityList:
+    - Bhuta Yadnya
+    UnsuitableActivityList:
+    - Manusa Yadnya
+    - Pitra Yadnya
+  - SasihId: 6
+    SuitableActivityList:
+    - Dewa Yadnya
+    - Manusa Yadnya
+    UnsuitableActivityList: []
+  - SasihId: 7
+    SuitableActivityList: []
+    UnsuitableActivityList:
+    - Manusa Yadnya
+    - Pitra Yadnya
+  - SasihId: 8
+    SuitableActivityList:
+    - Bhuta Yadnya
+    UnsuitableActivityList:
+    - Manusa Yadnya
+    - Pitra Yadnya
+  - SasihId: 9
+    SuitableActivityList:
+    - Dewa Yadnya
+    - Manusa Yadnya
+    - Rsi Yadnya
+    UnsuitableActivityList:
+    - Pitra Yadnya
+  - SasihId: 10
+    SuitableActivityList: []
+    UnsuitableActivityList:
+    - Manusa Yadnya
+    - Pitra Yadnya
+  - SasihId: 11
+    SuitableActivityList: []
+    UnsuitableActivityList:
+    - Manusa Yadnya
+    - Pitra Yadnya

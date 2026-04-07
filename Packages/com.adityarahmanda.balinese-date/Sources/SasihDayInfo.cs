@@ -5,7 +5,7 @@ namespace BalineseCalendar
         public int Id { get; }
         public int RefId { get; }
         public string Name { get; }
-    
+
         private SasihDayInfo(int id, int refId, string name)
         {
             Id = id;

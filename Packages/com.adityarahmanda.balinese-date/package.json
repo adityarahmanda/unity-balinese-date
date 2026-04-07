@@ -1,6 +1,6 @@
 {
   "name": "com.adityarahmanda.balinese-date",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "displayName": "Balinese Date",
   "documentationUrl": "https://github.com/adityarahmanda/unity-balinese-date/blob/master/README.md",
   "changelogUrl": "https://github.com/adityarahmanda/unity-balinese-date/commits/master",
@@ -19,12 +19,19 @@
     "url": "https://adityarahmanda.github.io",
     "email": "adityarahmanda.workspace@gmail.com"
   },
-  "description": "BalineseDate is a open source library to develop Balinese Saka Calendar (Kalender Bali) in C# and Unity. This library is ported from Peradnya's Balinese Date Java Library (https://github.com/peradnya/balinese-date-java-lib).",
+  "description": "BalineseDate is a open source library to develop Balinese Saka Calendar (Kalender Bali) in C# and Unity. This library is ported and modified further from Peradnya's Balinese Date Java Library (https://github.com/peradnya/balinese-date-java-lib).",
   "samples": [
     {
       "displayName": "Balinese Date Sample",
       "description": "Simple sample to demonstrate how to use Balinese Date library in Unity.",
       "path": "Samples"
     }
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://package.openupm.com"
+  },
+  "_fingerprint": "c4d3f17a8e3c8842894bd29c07ecba077068068b",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.2"
+  }
 }

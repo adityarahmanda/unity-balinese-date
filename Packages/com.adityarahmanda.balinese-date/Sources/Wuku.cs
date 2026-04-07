@@ -23,7 +23,7 @@ namespace BalineseCalendar
         public static readonly Wuku WARIGADEAN = new(7, 3, "Warigadean");
         public static readonly Wuku JULUNGWANGI = new(8, 7, "Julungwangi");
         public static readonly Wuku SUNGSANG = new(9, 1, "Sungsang");
-        public static readonly Wuku DUNGULAN = new(10, 4, "Dungulan");
+        public static readonly Wuku DUNGGULAN = new(10, 4, "Dunggulan");
         public static readonly Wuku KUNINGAN = new(11, 6, "Kuningan");
         public static readonly Wuku LANGKIR = new(12, 5, "Langkir");
         public static readonly Wuku MEDANGSIA = new(13, 8, "Medangsia");
@@ -40,16 +40,16 @@ namespace BalineseCalendar
         public static readonly Wuku BALA = new(24, 7, "Bala");
         public static readonly Wuku UGU = new(25, 1, "Ugu");
         public static readonly Wuku WAYANG = new(26, 4, "Wayang");
-        public static readonly Wuku KLAWU = new(27, 6, "Klawu");
+        public static readonly Wuku KULAWU = new(27, 6, "Kulawu");
         public static readonly Wuku DUKUT = new(28, 5, "Dukut");
         public static readonly Wuku WATUGUNUNG = new(29, 8, "Watugunung");
 
         public static readonly Wuku[] Values = 
         {
             SINTA, LANDEP, UKIR, KULANTIR, TOLU, GUMBREG, WARIGA, WARIGADEAN,
-            JULUNGWANGI, SUNGSANG, DUNGULAN, KUNINGAN, LANGKIR, MEDANGSIA,
+            JULUNGWANGI, SUNGSANG, DUNGGULAN, KUNINGAN, LANGKIR, MEDANGSIA,
             PUJUT, PAHANG, KRULUT, MERAKIH, TAMBIR, MEDANGKUNGAN, MATAL, UYE,
-            MENAIL, PRANGBAKAT, BALA, UGU, WAYANG, KLAWU, DUKUT, WATUGUNUNG
+            MENAIL, PRANGBAKAT, BALA, UGU, WAYANG, KULAWU, DUKUT, WATUGUNUNG
         };
 
         public override string ToString() => Name;
