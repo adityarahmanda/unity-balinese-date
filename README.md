@@ -47,6 +47,8 @@ BalineseDate also have several utilities that can be used by developers like:
 * Filter BalineseDate(s) from selected BalineseDate List
 * List of Rahinan given the BalineseDate
 * List of Dewasa given the BalineseDate
+* List of Dewasa's suitable and unsuitable activities
+* List of Sasih's suitable and unsuitable activities
 
 ## Installation
 
@@ -133,47 +135,72 @@ public class BalineseDateSample : MonoBehaviour
 
     private void Awake()
     {
-        var balineseDateToday = inputType == InputType.Today ? BalineseDate.Today : new BalineseDate(year, month, day);
+        var balineseDate = inputType == InputType.Today ? BalineseDate.Today : new BalineseDate(year, month, day);
+        var balineseDateDewasa = balineseDate.GetDewasa();
+        var balineseDateRahinan = balineseDate.GetRahinan();
         var dateInformation =
-            $"<b>Kalender Bali {balineseDateToday.date.ToString("dddd, dd MMMM yyyy", new CultureInfo("id-ID"))}</b>\n\n" +
-            $"<b>Penanggal:</b> {string.Join("/", balineseDateToday.sasihDay)}\n" +
-            $"<b>Sasih:</b> {balineseDateToday.sasih}\n" +
-            $"<b>Saka:</b> {balineseDateToday.saka}\n" +
+            $"<b>Kalender Bali {balineseDate.date.ToString("dddd, dd MMMM yyyy", new CultureInfo("id-ID"))}</b>\n\n" +
+            $"<b>{balineseDate.sasihDayInfo}:</b> {string.Join("/", balineseDate.sasihDay)}\n";
 
-            "\n<b>Pawukon</b>\n" +
-            $"<b>Wuku:</b> {balineseDateToday.wuku}\n" +
+        dateInformation += $"<b>Sasih:</b> {balineseDate.sasih}\n";
+        var sasihData = balineseDate.sasih.GetSasihData();
+        if (sasihData != null)
+        {
+            if (sasihData.SuitableActivityList != null && sasihData.SuitableActivityList.Length > 0)
+                dateInformation += "Baik untuk: " + string.Join(", ", sasihData.SuitableActivityList) + "\n";
+            
+            if (sasihData.UnsuitableActivityList != null && sasihData.UnsuitableActivityList.Length > 0)
+                dateInformation += "Tidak baik untuk: " + string.Join(", ", sasihData.UnsuitableActivityList) + "\n";
+        }
 
-            "\n<b>Waweran</b>\n" +
-            $"<b>EkaWara:</b> {balineseDateToday.ekaWara}\n" +
-            $"<b>DwiWara:</b> {balineseDateToday.dwiWara}\n" +
-            $"<b>TriWara:</b> {balineseDateToday.triWara}\n" +
-            $"<b>CaturWara:</b> {balineseDateToday.caturWara}\n" +
-            $"<b>PancaWara:</b> {balineseDateToday.pancaWara}\n" +
-            $"<b>SadWara:</b> {balineseDateToday.sadWara}\n" +
-            $"<b>SaptaWara:</b> {balineseDateToday.saptaWara}\n" +
-            $"<b>AstaWara:</b> {balineseDateToday.astaWara}\n" +
-            $"<b>SangaWara:</b> {balineseDateToday.sangaWara}\n" +
-            $"<b>DasaWara:</b> {balineseDateToday.dasaWara}\n" +
+        dateInformation += $"<b>Saka:</b> {balineseDate.saka}\n";
 
-            "\n<b>Palelintangan</b>\n" +
-            $"<b>Lintang:</b> {balineseDateToday.lintang}\n" +
-            $"<b>Pancasuda:</b> {balineseDateToday.pancaSuda}\n" +
-            $"<b>Pararasan:</b> {balineseDateToday.pararasan}\n" +
+        dateInformation += "\n<b>Pawukon</b>\n" +
+                           $"<b>Wuku:</b> {balineseDate.wuku}\n";
 
-            "\n<b>Paringkelan</b>\n" +
-            $"<b>Ingkel Pandakan:</b> {balineseDateToday.ingkel}\n" +
-            $"<b>Ingkel Jejepan:</b> {balineseDateToday.jejepan}\n" +
+        dateInformation += "\n<b>Waweran</b>\n" +
+                           $"<b>EkaWara:</b> {balineseDate.ekaWara}\n" +
+                           $"<b>DwiWara:</b> {balineseDate.dwiWara}\n" +
+                           $"<b>TriWara:</b> {balineseDate.triWara}\n" +
+                           $"<b>CaturWara:</b> {balineseDate.caturWara}\n" +
+                           $"<b>PancaWara:</b> {balineseDate.pancaWara}\n" +
+                           $"<b>SadWara:</b> {balineseDate.sadWara}\n" +
+                           $"<b>SaptaWara:</b> {balineseDate.saptaWara}\n" +
+                           $"<b>AstaWara:</b> {balineseDate.astaWara}\n" +
+                           $"<b>SangaWara:</b> {balineseDate.sangaWara}\n" +
+                           $"<b>DasaWara:</b> {balineseDate.dasaWara}\n";
 
-            "\n<b>Wariga Lainnya</b>\n" +
-            $"<b>Eka Jala Rsi:</b> {balineseDateToday.ekaJalaRsi}\n" +
-            $"<b>Pratithi Samut Pada:</b> {balineseDateToday.pratithiSamutPada}\n" +
-            $"<b>Watek Madya:</b> {balineseDateToday.watekMadya}\n" +
-            $"<b>Watek Alit:</b> {balineseDateToday.watekAlit}\n" +
-            $"<b>Rakam:</b> {balineseDateToday.rakam}\n" +
+        dateInformation += "\n<b>Palelintangan</b>\n" +
+                           $"<b>Lintang:</b> {balineseDate.lintang}\n" +
+                           $"<b>Pancasuda:</b> {balineseDate.pancaSuda}\n" +
+                           $"<b>Pararasan:</b> {balineseDate.pararasan}\n";
 
-            "\n<b>Dewasa dan Rahinan</b>\n" +
-            $"<b>Dewasa:</b> {string.Join(", ", balineseDateToday.GetDewasa())}\n" +
-            $"<b>Rahinan:</b> {string.Join(", ", balineseDateToday.GetRahinan())}\n";
+        dateInformation += "\n<b>Paringkelan</b>\n" +
+                           $"<b>Ingkel Pandakan:</b> {balineseDate.ingkel}\n" +
+                           $"<b>Ingkel Jejepan:</b> {balineseDate.jejepan}\n";
+
+        dateInformation += "\n<b>Wariga Lainnya</b>\n" +
+                           $"<b>Eka Jala Rsi:</b> {balineseDate.ekaJalaRsi}\n" +
+                           $"<b>Pratithi Samut Pada:</b> {balineseDate.pratithiSamutPada}\n" +
+                           $"<b>Watek Madya:</b> {balineseDate.watekMadya}\n" +
+                           $"<b>Watek Alit:</b> {balineseDate.watekAlit}\n" +
+                           $"<b>Rakam:</b> {balineseDate.rakam}\n";
+
+        dateInformation += "\n<b>Daftar Dewasa:</b>\n";
+        foreach (var dewasa in balineseDateDewasa)
+        {
+            dateInformation += $"# <b>{dewasa}</b>\n";
+            var dewasaData = dewasa.GetDewasaData();
+            if (dewasaData == null) continue;
+            
+            if (dewasaData.SuitableActivityList != null && dewasaData.SuitableActivityList.Length > 0)
+                dateInformation += "Baik untuk: " + string.Join(", ", dewasaData.SuitableActivityList) + "\n";
+            
+            if (dewasaData.UnsuitableActivityList != null && dewasaData.UnsuitableActivityList.Length > 0)
+                dateInformation += "Tidak baik untuk: " + string.Join(", ", dewasaData.UnsuitableActivityList) + "\n";
+        }
+
+        dateInformation += "\n<b>Daftar Rahinan:</b> " + string.Join(", ", balineseDateRahinan) + "\n";
         dateInformationText.text = dateInformation;
     }
 }
@@ -184,8 +211,10 @@ Example output of the dateInformation would be
 ```
 <b>Kalender Bali Selasa, 07 April 2026</b>
 
-<b>Penanggal:</b> 5/6
+<b>Pangelong:</b> 5/6
 <b>Sasih:</b> Kadasa
+Baik untuk: Dewa Yadnya, Manusa Yadnya, Rsi Yadnya
+Tidak baik untuk: Pitra Yadnya
 <b>Saka:</b> 1948
 
 <b>Pawukon</b>
@@ -219,7 +248,39 @@ Example output of the dateInformation would be
 <b>Watek Alit:</b> Lembu
 <b>Rakam:</b> Mantri Sinaroja
 
-<b>Dewasa dan Rahinan</b>
-<b>Dewasa:</b> Basah Gede, Carik Walangati, Salah Wadi, Banu Urung, Kala Empas, Kala Luang, Kala Sor, Titi Buwuk
-<b>Rahinan:</b> Sabuh Emas
+<b>Daftar Dewasa:</b>
+# <b>Banyu Urug</b>
+Baik untuk: Membuat kolam atau bendungan
+Tidak baik untuk: Membuat sumur
+# <b>Carik Walangati</b>
+Tidak baik untuk: Pitra Yadnya, Manusa Yadnya, Membuat bangunan
+# <b>Gagak Anungsang Pati</b>
+Tidak baik untuk: Pitra Yadnya
+# <b>Kala Empas Munggah</b>
+Baik untuk: Membuat bangunan
+Tidak baik untuk: Memetik buah-buahan
+# <b>Kala Jangkut</b>
+Baik untuk: Membuat jala, Membuat senjata
+# <b>Kala Klingkung</b>
+Tidak baik untuk: Mencuri demi kepentingan umum yang bertujuan baik
+# <b>Kala Luang</b>
+Baik untuk: Menanam umbi-umbian (kentang, kacang, dan lainnya), Membuat saluran air (got, terowongan, irigasi, dan lainnya)
+# <b>Kala Sor</b>
+Tidak baik untuk: Menggarap sawah atau ladang, Bercocok tanam
+# <b>Kala Timpang</b>
+Baik untuk: Membuat senjata, Membuat jebakan hewan, Memasang guna-guna, Membuat/meramu obat-obatan
+Tidak baik untuk: Berburu
+# <b>Pepedan</b>
+Baik untuk: Menggarap sawah atau ladang
+Tidak baik untuk: Membuat alat dari besi
+# <b>Salah Wadi</b>
+Tidak baik untuk: Pitra Yadnya, Manusa Yadnya
+# <b>Tali Wangke</b>
+Baik untuk: Membuat pagar, Memasang tali penghambat di ladang, Membuat tali pengikat padi, Membuat tali pengikat benda-benda mati
+Tidak baik untuk: Membuat tali ternak, Mengerjakan benang tenun
+# <b>Titi Buwuk</b>
+Baik untuk: Menghilangkan kekuatan negatif
+Tidak baik untuk: Melakukan berpergian, Melakukan kegiatan penting, Membuat tangga
+
+<b>Daftar Rahinan:</b> Sabuh Emas
 ```

@@ -18,7 +18,7 @@ namespace BalineseCalendar
         public static readonly PancaWara PAING = new(0, 9, 3, "Paing");
         public static readonly PancaWara PON = new(1, 7, 4, "Pon");
         public static readonly PancaWara WAGE = new(2, 4, 5, "Wage");
-        public static readonly PancaWara KLIWON = new(3, 8, 1, "Kliwon");
+        public static readonly PancaWara KELIWON = new(3, 8, 1, "Keliwon");
         public static readonly PancaWara UMANIS = new(4, 5, 2, "Umanis");
         
         public static readonly PancaWara[] Values =
@@ -26,7 +26,7 @@ namespace BalineseCalendar
             PAING,
             PON,
             WAGE,
-            KLIWON,
+            KELIWON,
             UMANIS
         };
         

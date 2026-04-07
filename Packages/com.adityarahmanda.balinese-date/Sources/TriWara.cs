@@ -12,7 +12,7 @@ namespace BalineseCalendar
             Urip = urip;
             Name = name;
         }
-
+        
         public static readonly TriWara PASAH = new(0, 9, "Pasah");
         public static readonly TriWara BETENG = new(1, 4, "Beteng");
         public static readonly TriWara KAJENG = new(2, 7, "Kajeng");
