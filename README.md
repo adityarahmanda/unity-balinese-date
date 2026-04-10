@@ -3,7 +3,7 @@
 
 ## Introduction
 
-BalineseDate is an open source library to develop Balinese Saka Calendar (Kalender Bali) in C# or Unity. This library is ported from [Peradnya's Balinese Date Java Library](https://github.com/peradnya/balinese-date-java-lib).
+BalineseDate is a open source library to develop Balinese Saka Calendar (Kalender Bali) in C# and Unity. This library is ported and modified further from Peradnya's [Balinese Date Java Library](https://github.com/peradnya/balinese-date-java-lib).
 
 [![openupm](https://img.shields.io/npm/v/com.adityarahmanda.balinese-date?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.adityarahmanda.balinese-date/)
 
@@ -76,13 +76,17 @@ https://github.com/adityarahmanda/unity-balinese-date.git?path=/Packages/com.adi
 
 5. Click Add
 
-### Install via .unitypackage Releases
+### Install via Tarball Releases
 
 1. Go to [Releases](https://github.com/adityarahmanda/unity-balinese-date/releases) page
 
-2. Download `.unitypackage` from the latest release
+2. Download `.tgz` from the latest release
 
-3. Import the downloaded `.unitypackage` to your Unity project
+3. In Unity, open Window/Package Manager
+
+    - Click `+`
+    - Select `Add package by tarball...`
+    - Select the downloaded `com.adityarahmanda.balinese-date` to import it
 
 ### Install via Scoped Registry
 

@@ -4,5 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Balinese Date Sample/BalineseDateSample.unity
+    guid: af17d85ff25c0844991e041ce03cd461
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
