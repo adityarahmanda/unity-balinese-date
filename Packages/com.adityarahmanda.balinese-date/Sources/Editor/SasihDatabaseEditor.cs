@@ -1,10 +1,10 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace BalineseCalendar
+namespace BalineseCalendar.Editor
 {   
     [CustomEditor(typeof(SasihDatabase))]
-    public class SasihDatabaseEditor : Editor
+    public class SasihDatabaseEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
